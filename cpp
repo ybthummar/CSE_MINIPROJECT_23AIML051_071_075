@@ -39,12 +39,4 @@ public:
     // Function to print the ticket
     void ticket(int choice, const char name[], int id2, int price, const char showName[]);
 
-    // Function to display details of reserved tickets (admin only)
-    void details();
-
-    // Function to select a movie
-    int movie();
-
-    // Function to select a movie for cancellation
-    int cMovie();
 };
