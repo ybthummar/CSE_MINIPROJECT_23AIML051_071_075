@@ -49,3 +49,9 @@ public:
     // Function to select a movie for cancellation
     int cMovie();
 };
+int main()
+{
+    MovieTicketBooking booking;
+    booking.startBookingSystem();
+    return 0;
+}
