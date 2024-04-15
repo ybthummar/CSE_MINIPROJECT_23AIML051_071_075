@@ -1,3 +1,5 @@
+**Movie Ticket Booking System Readme**
+
 *Overview:*
 This project implements a simple movie ticket booking system in C++. It allows users to reserve movie tickets, cancel reservations, view reserved tickets, and change ticket prices. The system also provides an administrative interface for managing ticket prices and viewing reservation details.
 
@@ -9,7 +11,7 @@ This project implements a simple movie ticket booking system in C++. It allows u
 5. *User-Friendly Interface:* The system provides a simple menu-driven interface for users to interact with.
 
 *File Structure:*
-- *main.cpp:* Contains the main function to start the booking system.
+- *cpp:* Contains the main function to start the booking system.
 - *MovieTicketBooking.cpp/h:* Implements the MovieTicketBooking class, which handles all functionalities of the ticket booking system.
 - *README.md:* Documentation file providing an overview of the project and instructions for usage.
 
@@ -28,7 +30,7 @@ The default password to access administrative features is "pass". Administrators
 - The system assumes a theater with 100 seats. Modify the seat array size accordingly for different theater configurations.
 
 *Contributors:*
-- [Your Name]
+-23AIML051-HET
+-23AIML071-YUG
+-23AIML075-PRIT
 
-*License:*
-This project is licensed under the [insert license name] license.
