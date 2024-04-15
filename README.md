@@ -30,7 +30,7 @@ The default password to access administrative features is "pass". Administrators
 - The system assumes a theater with 100 seats. Modify the seat array size accordingly for different theater configurations.
 
 *Contributors:*
--23AIML051-HET
--23AIML071-YUG
--23AIML075-PRIT
+-23AIML051-HET PATEL
+-23AIML071-YUG THUMMAR
+-23AIML075-PRIT VARASADIYA
 
