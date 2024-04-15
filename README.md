@@ -1,57 +1,34 @@
-//C++ MINIPROJECT PREPARED BY 23AIML051_071_075
-#include <iostream>
-#include <cstdlib>
-#include <cstring>
+*Overview:*
+This project implements a simple movie ticket booking system in C++. It allows users to reserve movie tickets, cancel reservations, view reserved tickets, and change ticket prices. The system also provides an administrative interface for managing ticket prices and viewing reservation details.
 
-using namespace std;
+*Features:*
+1. *Reservation:* Users can reserve movie tickets by selecting a movie, entering their details, and choosing a seat.
+2. *Cancellation:* Users can cancel their reserved tickets by providing the booking ID.
+3. *Price Modification:* Administrators can change the price of tickets by entering a password.
+4. *View Reserved Tickets:* Administrators can view details of all reserved tickets by entering a password.
+5. *User-Friendly Interface:* The system provides a simple menu-driven interface for users to interact with.
 
-class MovieTicketBooking
-{
-private:
-    struct MovieDetails
-    {
-        char name[20];
-        char email[50]; // Email ID of the customer
-        int seat;       // Seat number
-        int id;         // Booking ID
-    };
+*File Structure:*
+- *main.cpp:* Contains the main function to start the booking system.
+- *MovieTicketBooking.cpp/h:* Implements the MovieTicketBooking class, which handles all functionalities of the ticket booking system.
+- *README.md:* Documentation file providing an overview of the project and instructions for usage.
 
-    MovieDetails person[300];   // Array to store booking details
-    int count = 0;              // Counter for the number of bookings
-    int id2 = 1000;             // Initial booking ID
-    int seat[101][101] = {{0}}; // 2D array to represent seats in the theater
+*Instructions for Usage:*
+1. Compile the program using a C++ compiler.
+2. Run the executable file.
+3. Choose options from the menu to perform actions such as reservation, cancellation, etc.
+4. Administrators can enter a password to access additional features like changing ticket prices and viewing reservation details.
 
-public:
-    // Function to start the booking system
-    void startBookingSystem();
+*Password:*
+The default password to access administrative features is "pass". Administrators can change this password by modifying the source code.
 
-    // Function to change the price of a ticket (admin only)
-    int changePrice(int prize);
+*Note:*
+- The project currently supports a maximum of 300 bookings.
+- The available movies are hardcoded in the system. To add or remove movies, modify the movie() and cMovie() functions in the MovieTicketBooking class.
+- The system assumes a theater with 100 seats. Modify the seat array size accordingly for different theater configurations.
 
-    // Function to reserve a ticket
-    void reservation(int array[], int price, int selection);
+*Contributors:*
+- [Your Name]
 
-    // Function to display menu and get user choice
-    int choice1();
-
-    // Function to cancel a ticket
-    void cancel(int array[]);
-
-    // Function to print the ticket
-    void ticket(int choice, const char name[], int id2, int price, const char showName[]);
-
-    // Function to display details of reserved tickets (admin only)
-    void details();
-
-    // Function to select a movie
-    int movie();
-
-    // Function to select a movie for cancellation
-    int cMovie();
-};
-int main()
-{
-    MovieTicketBooking booking;
-    booking.startBookingSystem();
-    return 0;
-}
+*License:*
+This project is licensed under the [insert license name] license.
