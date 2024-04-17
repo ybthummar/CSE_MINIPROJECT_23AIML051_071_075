@@ -82,6 +82,82 @@ void MovieTicketBooking::startBookingSystem()
         }
     }
 }
+int MovieTicketBooking::changePrice(int prize)
+{
+    string pass;
+    cout << "\n\n";
+    cout << "\t\t\tEnter the password to change the price of the ticket: ";
+    cin >> pass;
+    if (pass == "pass")
+    {
+        cout << "\n\n";
+        cout << "\t\t\tPlease enter the new price: ";
+        cin >> prize;
+        system("PAUSE");
+        system("CLS");
+    }
+    else
+    {
+        cout << "\n\n";
+        cout << "\t\t\tThe entered password is wrong!" << endl;
+    }
+    return prize;
+}
+
+void MovieTicketBooking::reservation(int array[], int price, int selection)
+{
+    int j;
+    const char *showName = "";
+
+    // Determine the name of the selected movie
+    if (selection == 1)
+        showName = "Godzilla X Kong : The New Empire";
+    else if (selection == 2)
+        showName = "The Family Star";
+    else if (selection == 3)
+        showName = "Chal Jeevi Laiye";
+
+    // Display available seats
+    cout << "\n                                SCREEN\n\n\n";
+    for (int i = 1; i <= 100; i++)
+    {   
+        if (array[i] == 0)
+            cout << i << "\t";
+        else
+            cout << "*\t";
+        if (i % 10 == 0)
+            cout << "\n\n";
+    }
+
+    // Get customer details
+    cout << "\n\n";
+    cout << "\t\t\tPlease enter your name: ";
+    cin.ignore();
+    cin.getline(person[count].name, 20);
+    cout << "\t\t\tPlease enter your email: ";
+    cin >> person[count].email;
+    cout << "\t\t\tWhich seat number do you want? ";
+    cin >> j;
+    if (j > 100 || j < 1)
+    {
+        cout << "\n\n";
+        cout << "\t\t\tSeat number is unavailable in this theater\n";
+        cout << "\t\t\tPlease re-enter the seat number: ";
+        cin >> j;
+    }
+    if (array[j] == 1)
+    {
+        cout << "\n\n";
+        cout << "\t\t\tSorry, this ticket is already booked! Please choose another seat.\n";
+        cin >> j;
+    }
+    else
+        array[j] = 1;
+    person[count].seat = j;
+    ticket(j, person[count].name, id2, price, showName);
+    id2++;
+}
+
 
 
         
