@@ -175,6 +175,48 @@ int MovieTicketBooking::choice1()
     return choice;
 }
 
+void MovieTicketBooking::cancel(int array[])
+{
+    int Cseat, i, stop;
+    cout << "\n\n";
+    cout << "\t\t\tPlease enter the ID number of the ticket: ";
+    cin >> Cseat;
+    for (i = 0; i < 300; i++)
+    {
+        if (Cseat == person[i].id)
+        {
+            stop = 5;
+            system("CLS");
+            cout << "\t\t\t" << person[i].name << ", your seat " << person[i].seat << " is cancelled" << endl;
+            array[person[i].seat] = 0;
+            break;
+        }
+    }
+    if (stop != 5)
+    {
+        cout << "\n\n";
+        cout << "\t\t\tTicket ID number is incorrect. Please enter the right one to cancel the ticket." << endl;
+    }
+}
+
+void MovieTicketBooking::ticket(int choice, const char name[], int id2, int price, const char showName[])
+{
+    system("CLS");
+    cout << "\n\n";
+    cout << "\t\t\t-----------------THEATER BOOKING TICKET----------------\n";
+    cout << "\t\t\t=======================================================\n";
+    cout << "\t\t\tBooking ID : " << id2 << "\t\t\tShow Name : " << showName << "\n";
+    cout << "\t\t\tCustomer  : " << name << "\n";
+    cout << "\t\t\t                              Date      : 22-04-2024\n";
+    cout << "\t\t\t                              Time      : 08:00pm\n";
+    cout << "\t\t\t                              Hall      : 02\n";
+    cout << "\t\t\t                              seats No. : " << choice << "\n";
+    cout << "\t\t\t                              price .   : " << price << "\n\n";
+    person[count].id = id2;
+    cout << "\t\t\t=======================================================\n";
+}
+
+
 
 
         
