@@ -2,9 +2,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
-
 using namespace std;
-
 class MovieTicketBooking
 {
 private:
@@ -15,7 +13,6 @@ private:
         int seat;       // Seat number
         int id;         // Booking ID
     };
-
     MovieDetails person[300];   // Array to store booking details
     int count = 0;              // Counter for the number of bookings
     int id2 = 1000;             // Initial booking ID
@@ -198,7 +195,6 @@ void MovieTicketBooking::cancel(int array[])
         cout << "\t\t\tTicket ID number is incorrect. Please enter the right one to cancel the ticket." << endl;
     }
 }
-
 void MovieTicketBooking::ticket(int choice, const char name[], int id2, int price, const char showName[])
 {
     system("CLS");
@@ -216,10 +212,51 @@ void MovieTicketBooking::ticket(int choice, const char name[], int id2, int pric
     cout << "\t\t\t=======================================================\n";
 }
 
+void MovieTicketBooking::details()
+{
+    string pass;
+    cout << "\t\t\tEnter the password to see details: ";
+    cin >> pass;
+    if (pass == "pass")
+    {
+        for (int i = 0; i < count; i++)
+        {
+            cout << "\t\t\tSeat no: " << person[i].seat << " is booked by " << person[i].name << " booking id is " << person[i].id << endl;
+        }
+    }
+    else
+        cout << "\t\t\tEntered password is wrong" << endl;
+    system("PAUSE");
+    system("CLS");
+}
 
-
-
-        
+int MovieTicketBooking::movie()
+{
+    int i;
+    system("CLS");
+    cout << "\n\n";
+    cout << "\t\t\tWhich movie do you want to see?\n";
+    cout << "\t\t\t--------------------------------\n\n";
+    cout << "\t\t\tPress 1 for Godzilla X Kong : The New Empire\n\n";
+    cout << "\t\t\tPress 2 for The Family Star\n\n";
+    cout << "\t\t\tPress 3 for Chal Jeevi Laiye\n";
+    cout << "\t\t\tEnter your choice:";
+    cin >> i;
+    system("CLS");
+    return i;
+}
+int MovieTicketBooking::cMovie()
+{
+    int i;
+    cout << "\t\t\tWhich movie ticket do you want to cancel\n";
+    cout << "\t\t\t-------------------------------------\n";
+    cout << "\t\t\tPress 1 for Godzilla X Kong : The New Empire\n\n";
+    cout << "\t\t\tPress 2 for The Family Star\n\n";
+    cout << "\t\t\tPress 3 for Chal Jeevi Laiye\n";
+    cout << "\t\t\tEnter your choice: ";
+    cin >> i;
+    return i;
+} 
 int main()
 {
     MovieTicketBooking booking;
