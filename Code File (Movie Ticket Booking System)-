@@ -1,8 +1,9 @@
-// THIS PROGRAM IS PREPARED BY 23AIML051_71_75
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+
 using namespace std;
+
 class MovieTicketBooking
 {
 private:
@@ -13,6 +14,7 @@ private:
         int seat;       // Seat number
         int id;         // Booking ID
     };
+
     MovieDetails person[300];   // Array to store booking details
     int count = 0;              // Counter for the number of bookings
     int id2 = 1000;             // Initial booking ID
@@ -46,39 +48,42 @@ public:
     // Function to select a movie for cancellation
     int cMovie();
 };
+
 void MovieTicketBooking::startBookingSystem()
 {
     int choice, price = 500, selection;
-    int x=0;
+    int x = 0;
     // Loop until the user chooses to exit
-    while ( x!=5)
+    while (x != 5)
     {
         choice = choice1(); // Get user choice
-        switch(choice)
-        case 1: 
+        switch (choice)
+        {
+        case 1:
             price = changePrice(price); // Change ticket price
             break;
         case 2:
-            details();// Display reserved tickets (admin only)
+            details(); // Display reserved tickets (admin only)
             break;
         case 3:
-            selection = mobie();                                  // Select a movie
-            reservation(seat[selection - 1], price, selection);   // Reserve a ticket 
-            count++;                                              // Increment booking counter
+            selection = movie();                                // Select a movie
+            reservation(seat[selection - 1], price, selection); // Reserve a ticket
+            count++;                                            // Increment booking counter
             break;
         case 4:
-            selection = cmovie();               // Select a movie for cancellation
-            reservation(seat[selection - 1]);  // cancel a ticket
+            selection = cMovie();        // Select a movie for cancellation
+            cancel(seat[selection - 1]); // Cancel a ticket
             break;
         case 5:
             x = 5; // Exit the system
             break;
-        default;
-            couut << "\t\t\tchoice not available" ,,endl;
+        default:
+            cout << "\t\t\tChoice not available" << endl;
             break;
         }
     }
 }
+
 int MovieTicketBooking::changePrice(int prize)
 {
     string pass;
@@ -158,7 +163,6 @@ void MovieTicketBooking::reservation(int array[], int price, int selection)
 int MovieTicketBooking::choice1()
 {
     int choice;
-    //First interface when code runs
     cout << "\n\n";
     cout << "\t\t\tSimple Movie Ticket Booking System\n";
     cout << "\t\t\t=================================\n";
@@ -195,6 +199,7 @@ void MovieTicketBooking::cancel(int array[])
         cout << "\t\t\tTicket ID number is incorrect. Please enter the right one to cancel the ticket." << endl;
     }
 }
+
 void MovieTicketBooking::ticket(int choice, const char name[], int id2, int price, const char showName[])
 {
     system("CLS");
@@ -245,6 +250,7 @@ int MovieTicketBooking::movie()
     system("CLS");
     return i;
 }
+
 int MovieTicketBooking::cMovie()
 {
     int i;
@@ -256,11 +262,11 @@ int MovieTicketBooking::cMovie()
     cout << "\t\t\tEnter your choice: ";
     cin >> i;
     return i;
-} 
+}
+
 int main()
 {
     MovieTicketBooking booking;
     booking.startBookingSystem();
-//this is end of program
     return 0;
 }
